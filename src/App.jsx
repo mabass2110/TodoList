@@ -40,7 +40,12 @@ function App() {
           todos.map((todo,i) => <div className="todo" key={i} id={i} >{todo.text}</div>)
         }
 
-       
+        <form >
+
+          <input type="text" value={value} placeholder="Add new todo" />
+
+        </form>
+
         
     </>
   )
