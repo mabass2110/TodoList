@@ -19,7 +19,8 @@ function App() {
     {
       text: 'build react',
       isCompleted: false,
-    }        
+    } 
+
   ])
 
 
@@ -32,19 +33,14 @@ function App() {
 
 
 
- 
+ //it returns a list of todos, with an input field to insert new Todo's
   return (
     <>
         {
           todos.map((todo,i) => <div className="todo" key={i} id={i} >{todo.text}</div>)
         }
 
-        <form >
-
-          <input type="text" value={value} placeholder="Add new todo" />
-
-        </form>
-
+       
         
     </>
   )
