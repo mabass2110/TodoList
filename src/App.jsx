@@ -11,7 +11,7 @@ function App() {
     {
       text: 'learn react',
       isCompleted: false,
-    }
+    },
     {
       text: 'meet friend for lunch',
       isCompleted: false,
@@ -22,10 +22,28 @@ function App() {
     } 
 
   ])
+  
+
+ 
 
 
   //input value state
   const [value,setValue] = React.useState('');
+
+   //onChange method
+
+  const onChange = e => setValue(e.target.value);
+
+    //onSubmit method
+  
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!value) return;
+    const newTodos = [...todos, {text:{value}, isCompleted: falso}]
+    setValue(newTodos)
+    setTodo("")
+  }
+
 
  
   //removes a task from the list
@@ -40,9 +58,9 @@ function App() {
           todos.map((todo,i) => <div className="todo" key={i} id={i} >{todo.text}</div>)
         }
 
-        <form >
+        <form onSubmit={handleSubmit}>
 
-          <input type="text" value={value} placeholder="Add new todo" />
+          <input type="text" value={value} placeholder="Add new todo" onChange={onChange} />
 
         </form>
 
