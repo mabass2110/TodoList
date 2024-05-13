@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: 'Arial';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: Arial;
+}
+
+.app {
+  background: #209cee;
+  padding: 30px;
+  height: 100vh;
+}
+
+.todo-list{
+  background: #e8e8e8;
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 400px;
+}
+
+.todo{
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0,0,0, 0.15);
+  padding: 3px 10px;
+  font-size: 24px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input{
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 1rem;
+  height: 2.25em;
+  font-size: 24px;
+}
+
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Optional: to make the h1 span the full width */
+  margin: 0;
+  padding: 10px; /* Optional: to add some spacing around the h1 */
+  background-color: #f0f0f0; /* Optional: to give the h1 a background color */
+}
+
+
