@@ -32,22 +32,27 @@ function App() {
 
    //onChange method
 
-  const onChange = e => setValue(e.target.value);
+    const onChange = e => setValue(e.target.value);
 
     //onSubmit method
-  
-  const handleSubmit = e => {
+    const handleSubmit = e => {
+    
     e.preventDefault();
     if (!value) return;
-    const newTodos = [...todos, {text:{value}, isCompleted: falso}]
-    setValue(newTodos)
-    setTodo("")
+    const newTodos = [...todos, {text:{value}, isCompleted: false}];
+    setValue(newTodos);
+    setTodo("");
   }
 
 
  
   //removes a task from the list
-  
+  const removeTodo = e => {
+    const index = Number(e.target.id);
+    const temp = [...todos];
+    temp.splice(index,1)
+    setTodo(temp);
+  }
 
 
 
@@ -55,7 +60,7 @@ function App() {
   return (
     <>
         {
-          todos.map((todo,i) => <div className="todo" key={i} id={i} >{todo.text}</div>)
+          todos.map((todo,i) => <div className="todo" key={i} id={i} onClick={removeTodo}>{todo.text}</div>)
         }
 
         <form onSubmit={handleSubmit}>
