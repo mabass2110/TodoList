@@ -39,13 +39,10 @@ function App() {
     
     e.preventDefault();
     if (!value) return;
-    const newTodos = [...todos, {text:{value}, isCompleted: false}];
-    setValue(newTodos);
-    setTodo("");
+    const newTodos = [...todos, {text:value, isCompleted: false}];
+    setTodo(newTodos);
+    setValue("");
   }
-
-
- 
   //removes a task from the list
   const removeTodo = e => {
     const index = Number(e.target.id);
@@ -53,24 +50,32 @@ function App() {
     temp.splice(index,1)
     setTodo(temp);
   }
-
-
-
  //it returns a list of todos, with an input field to insert new Todo's
   return (
-    <>
-        {
-          todos.map((todo,i) => <div className="todo" key={i} id={i} onClick={removeTodo}>{todo.text}</div>)
-        }
+    <div className='app-container text-center' >
+    
+      <ul className="todo-list">
+        {todos.map((todo) => (
+          <li key={todo.text}>
+            <div className="todo" onClick={() => removeTodo(todo.text)}>
+              {todo.text}
+            </div>
+          </li>
+        ))}
+      </ul>
 
         <form onSubmit={handleSubmit}>
 
-          <input type="text" value={value} placeholder="Add new todo" onChange={onChange} />
+          <input type="text"
+                 value={value}
+                 placeholder="Add new todo"
+                 onChange={onChange} 
+              />
 
         </form>
 
         
-    </>
+    </div>
   )
 }
 
